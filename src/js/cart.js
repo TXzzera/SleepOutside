@@ -6,7 +6,7 @@ function renderCartContents() {
     cartItems = [];
   }
   // eslint-disable-next-line no-console
-  console.log("Conteúdo do carrinho:", cartItems);
+  console.log("Cart Content:", cartItems);
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
