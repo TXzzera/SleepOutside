@@ -1,12 +1,7 @@
 import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
-  let cartItems = getLocalStorage("so-cart") || [];
-  if (!Array.isArray(cartItems)) {
-    cartItems = [];
-  }
-  // eslint-disable-next-line no-console
-  console.log("Conteúdo do carrinho:", cartItems);
+  const cartItems = getLocalStorage("so-cart");
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
