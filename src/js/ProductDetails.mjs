@@ -35,7 +35,7 @@ function productDetailsTemplate(product) {
   document.getElementById("name").textContent = product.NameWithoutBrand || "";
 
   const productImage = document.getElementById("image");
-  productImage.src = product.Image || "";
+  productImage.src = product.Image.PrimaryLarge || "";
   productImage.alt = product.NameWithoutBrand || "";
 
   document.getElementById("price").textContent = `$${product.FinalPrice?.toFixed(2)}` || "";

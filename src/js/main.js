@@ -1,17 +1,33 @@
-import ProductData from "./ProductData.mjs";
-import ProductList from "./ProductList.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 
-const dataSource = new ProductData("tents");
+async function init() {
+  await loadHeaderFooter();
 
-const element = document.querySelector(".product-list");
+  const container = document.querySelector(".header-container");
+  if (container) {
+    const cart = container.querySelector(".cart");
 
-const productList = new ProductList("Tents", dataSource, element);
+    const form = document.createElement("form");
+    form.id = "search-form";
+    form.className = "search-form";
+    form.innerHTML = `
+      <input type="text" id="search-input" placeholder="Search product..." />
+      <button type="submit">Search</button>
+    `;
 
-productList.init();
+    container.insertBefore(form, cart);
 
-loadHeaderFooter().then(() => {
-  productList.render();
-}).catch((error) => {
-  console.error("Error loading header and footer:", error);
-});
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const query = document.querySelector("#search-input").value.trim();
+      if (query) {
+        window.location.href = `product-listing.html?search=${encodeURIComponent(query)}`;
+      }
+    });
+  } else {
+    // eslint-disable-next-line no-console
+    console.log("Header container not found");
+  }
+}
+
+init();
