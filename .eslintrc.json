@@ -25,7 +25,11 @@
       }
     ],
     "no-console": 1,
+<<<<<<< HEAD
     "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+=======
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+>>>>>>> f7a608fb132048dcfec589c2039d19470fdf0833
     "func-names": 0,
     "space-unary-ops": 2,
     "space-in-parens": "error",
