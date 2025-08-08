@@ -1,4 +1,4 @@
-import{r as c,l as o,a}from"./utils-BgjtRfnf.js";import{P as n}from"./ProductData-Cqu801TC.js";function m(e){return`
+import{r as c,l as o,a}from"./utils-BgjtRfnf.js";import{P as n}from"./ExternalServices-Cqu801TC.js";function m(e){return`
     <li class="product-card">
       <a href="product_pages/?products=${e.Id}">
         <img src="${e.Image.PrimaryMedium}" alt="${e.Name}">
