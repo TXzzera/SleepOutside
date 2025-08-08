@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sleep Outside | Checkout</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/checkout.js" type="module"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Outside | Checkout</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/checkout.js" type="module"></script>
+</head>
 
-  <body>
-    <header class="divider" id="header-template">
-    </header>
+<body>
+  <header class="divider" id="header-template"></header>
 
+  <main class="checkout divider">
     <form id="checkout-form">
       <fieldset>
         <legend>Customer Information</legend>
@@ -66,14 +66,15 @@
 
     <aside class="order-summary">
       <h2>Order Summary</h2>
-      <p>Subtotal: <span id="subtotal">$0.00</span></p>
+      <p>Items: <span id="num-items">0</span></p>
+      <p>Subtotal: <span id="cartTotal">$0.00</span></p>
       <p>Tax: <span id="tax">$0.00</span></p>
       <p>Shipping: <span id="shipping">$0.00</span></p>
-      <hr>
-      <p><strong>Total: <span id="total">$0.00</span></strong></p>
+      <hr />
+      <p><strong>Total: <span id="orderTotal">$0.00</span></strong></p>
     </aside>
   </main>
-    <footer id="footer-template" class="divider">
-    </footer>
-  </body>
+
+  <footer id="footer-template" class="divider"></footer>
+</body>
 </html>
