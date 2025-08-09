@@ -44,8 +44,9 @@ export async function loadTemplate (path) {
 }
 
 export async function loadHeaderFooter() {
-  // base pública da aplicação
-  const basePublicPath = "/SleepOutside/";
+
+  const basePublicPath = import.meta.env.VITE_BASE_PUBLIC_PATH || "/";
+
 
   const headerTemplate = await loadTemplate(`${basePublicPath}partials/header.html`);
   const footerTemplate = await loadTemplate(`${basePublicPath}partials/footer.html`);

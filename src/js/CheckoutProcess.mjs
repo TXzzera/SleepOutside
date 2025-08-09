@@ -1,4 +1,4 @@
-import { getLocalStorage } from "./utils.mjs";
+import { setLocalStorage, getLocalStorage } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 
 const services = new ExternalServices();
@@ -31,17 +31,18 @@ export default class CheckoutProcess {
         this.key = key;
         this.outputSelector = outputSelector;
         this.list = [];
-        this.ItemTotal = 0;
+        this.itemTotal = 0;
         this.shipping = 0;
         this.tax = 0;
         this.OrderTotal = 0;
     }
-    Init(){
+    init(){
         this.list = getLocalStorage(this.key);
-        this.calculateItemSummary();
+        this.calculateItemSubTotal();
     }
 
     calculateItemSubTotal() {
+       this.itemTotal = this.list.reduce((sum, item) => sum + Number(item.FinalPrice), 0);
   }
 
   calculateOrderTotal() {
@@ -62,7 +63,7 @@ export default class CheckoutProcess {
   }
 
 async checkout() {
-  const formElement = document.forms("checkout-form");
+  const formElement = document.querySelector("#checkout-form");
   const order = formDataToJSON(formElement);
 
   order.orderDate = new Date().toISOString();
@@ -72,11 +73,23 @@ async checkout() {
   order.orderTotal = this.orderTotal;
 
   try{
-    const response = await services.checkout(order);
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-}
+    const res = await services.checkout(order);
+      console.log(res);
 
-}
+      alert("Order successfully placed!");
+
+      setLocalStorage("so-cart", []);
+
+      setTimeout(() => {
+        location.assign("success.html");
+    } ,1500);
+    
+  }catch (err) {
+      // get rid of any preexisting alerts.
+      removeAllAlerts();
+      for (let message in err.message) {
+        alertMessage(err.message[message]);
+      }
+
+      console.log(err);
+}}}

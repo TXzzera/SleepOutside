@@ -295,6 +295,92 @@ button {
   grid-column: 3;
 }
 
+#checkout-form {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#checkout-form fieldset {
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#checkout-form legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+  color: var(--secondary-color);
+}
+
+#checkout-form label {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+#checkout-form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+}
+
+#checkoutSubmit {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
+
+.order-summary {
+  max-width: 350px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid var(--light-grey);
+}
+
+.order-summary h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.order-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.4rem 0;
+}
+
+.order-summary strong {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.order-success {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.order-success h2 {
+  color: green;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.order-success p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
