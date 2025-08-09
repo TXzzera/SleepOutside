@@ -1,4 +1,4 @@
-import{l as o,g as c}from"./utils-BgjtRfnf.js";o();function s(){const a=c("so-cart").map(r=>n(r));document.querySelector(".product-list").innerHTML=a.join("")}function n(t){return`<li class="cart-card divider">
+import{l as o,g as c}from"./utils-CetppbQX.js";o();function s(){const a=c("so-cart").map(r=>n(r));document.querySelector(".product-list").innerHTML=a.join("")}function n(t){return`<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
       src="${t.Image}"
